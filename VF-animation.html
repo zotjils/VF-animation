@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VF Animation</title>
+  <style>
+    @font-face { 
+      font-family: "Jost";
+      src: url("/Users/family/Desktop/Jost-VariableFont_wght.ttf") format("truetype-variations");   
+      font-weight: 100, 900;
+    }
+    body {
+      height: 400vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: color-progress linear;
+      animation-timeline: scroll();
+      font-family: 'Jost', sans-serif;    }
+
+    .announceText {
+      color: #50c2f6;
+      font-size: 5vmin;
+      margin: 10vh auto 0;
+	    transform: translateY(-50%);           
+      position: fixed;
+    }
+
+    @keyframes color-progress {
+      from {
+        background-color: #4c63e0;
+      }
+      to {
+        background-color: #011c40;
+      }
+    }
+
+    @keyframes text-progress {
+      from {
+        font-size: 15vmax;
+        margin: 47vh auto 0;
+	      transform: translateY(-50%);        
+        font-weight: 250;
+        color: #50c2f6;
+      }
+      to {
+        font-size: 23vw;
+        margin: 47vh auto 0;
+	      transform: translateY(-50%);           
+        font-weight: 900;
+        color: #546efd;
+      }
+    }
+
+    .textAnimation {
+      position: fixed;
+      color: #50c2f6;
+      white-space: nowrap;
+      animation: text-progress ease-in;
+      animation-timeline: scroll();
+    }
+
+    .fontInfo {
+      color: #50c2f6;
+      font-size: 5vmin;
+      margin: 90vh auto 0;
+	     transform: translateY(-50%);     
+      position: fixed;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+    .pagetop {
+        height: 6vmin;
+        width: 6vmin;
+        position: fixed;
+        right: 6vmin;
+        margin: 90vh auto 0;
+	      transform: translateY(-50%);   
+        border: solid 0.3vmin #50c2f6;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+    .pagetop__arrow {
+        height: 1.5vmin;
+        width: 1.5vmin;
+        border-top: 0.3vmin solid #50c2f6;
+        border-right: 0.3vmin solid #50c2f6;
+        transform: translateY(20%) rotate(-45deg);
+    }
+  </style>
+</head>
+<body>
+<p class="announceText">VF Animation</p>
+<div class="textAnimation" contentEditable="true">Variable</div>
+<p class="fontInfo"> ↑ Editable (font: Jost)
+</p>
+<a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+</body>
+</html>
