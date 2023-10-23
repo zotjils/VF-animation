@@ -213,6 +213,9 @@ input[type="checkbox"] {
 }
 
 @media screen and (max-width: 480px) {
+    .spacer {
+        height: 150vh;
+    }
     .container {
         margin: 75vh auto 0;
         transform: translateY(-50%);
@@ -223,7 +226,7 @@ input[type="checkbox"] {
     }
 
     .switch {
-        bottom: 10.2vh;
+        bottom: 64px;
     }
 
     .switch svg {
@@ -232,7 +235,7 @@ input[type="checkbox"] {
     }
 
     .pagetop {
-        bottom: 11.3vh;
+        bottom: 72px;
         height: 4vh;
         width: 4vh;
         border: solid 0.3vh var(--color);
