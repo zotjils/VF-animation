@@ -1,111 +1,193 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Variable Font Animation</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@200..500">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..900">
-  <link rel="icon" href="favicon.ico">  
-  <head prefix="og: https://ogp.me/ns#">
-  <meta property="og:url" content="https://zotjils.github.io/vf-animation/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Variable Font Animation" />
-  <meta property="og:description" content="Discover scroll-driven variable font animations." />
-  <meta property="og:image" content="cover.jpeg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@zotjils" />
-  <meta property="fb:app_id" content="772303574665057" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Variable Font Animation</title>
+    <link rel="stylesheet" href="style_sub.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@200..500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..900">
+    <link rel="icon" href="favicon.ico">
 </head>
+<style>
+    .display-text,
+    .noto {
+        position: fixed;
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        outline: none;
+        white-space: nowrap;
+
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 15vw;
+        font-weight: 100;
+        color: var(--fontColor);
+
+        animation: noto-animation linear forwards;
+        animation-timeline: scroll();
+    }
+
+    @keyframes noto-animation {
+        to {
+            font-size: 16vw;
+            font-weight: 900;
+            color: var(--fontColor);
+        }
+    }
+
+    .mplus {
+        position: fixed;
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        outline: none;
+        white-space: nowrap;
+
+        font-family: "M PLUS 1", sans-serif;
+        font-size: 15vw;
+        font-weight: 100;
+        color: var(--fontColor);
+
+        animation: mplus-animation linear forwards;
+        animation-timeline: scroll();
+    }
+
+    @keyframes mplus-animation {
+        to {
+            font-size: 16vw;
+            font-weight: 900;
+            color: var(--fontColor);
+        }
+    }
+
+    .jost {
+        position: fixed;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        outline: none;
+        white-space: nowrap;
+
+        font-family: "Jost", sans-serif;
+        font-size: 15vw;
+        font-weight: 100;
+        color: var(--fontColor);
+
+        animation: jost-animation linear forwards;
+        animation-timeline: scroll();
+    }
+
+    @keyframes jost-animation {
+        to {
+            font-size: 16vw;
+            font-weight: 900;
+            color: var(--fontColor);
+        }
+    }
+
+    .bodoni {
+        position: fixed;
+        top: 44%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        outline: none;
+        white-space: nowrap;
+
+        font-family: "Bodoni Moda", serif;
+        font-size: 15vw;
+        font-weight: 400;
+        color: var(--fontColor);
+        font-variation-settings: "opsz" 40;
+
+        animation: bodoni-animation linear forwards;
+        animation-timeline: scroll();
+    }
+
+    @keyframes bodoni-animation {
+        to {
+            font-size: 16vw;
+            font-weight: 900;
+            font-variation-settings: "opsz" 49;
+            color: var(--fontColor);
+        }
+    }
+</style>
+
 <body>
-  <p class="announceText">Editable Variable Font Animation</p>
-  <div class='switch'> <input id='js_mode_toggle' type='checkbox' /> <label class='switch-mode' for='js_mode_toggle' id='js_rotate'>
-        <span id='switch-mode-dark' title='ダークモード'>
-          <svg class='feather feather-moon' fill='none' height='24' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/></svg>
-        </span>
-        <span id='switch-mode-light' title='ライトモード'>
-          <svg class='feather feather-sun' fill='none' height='24' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><circle cx='12' cy='12' r='5'/><line x1='12' x2='12' y1='1' y2='3'/><line x1='12' x2='12' y1='21' y2='23'/><line x1='4.22' x2='5.64' y1='4.22' y2='5.64'/><line x1='18.36' x2='19.78' y1='18.36' y2='19.78'/><line x1='1' x2='3' y1='12' y2='12'/><line x1='21' x2='23' y1='12' y2='12'/><line x1='4.22' x2='5.64' y1='19.78' y2='18.36'/><line x1='18.36' x2='19.78' y1='5.64' y2='4.22'/></svg>
-      </span>
-    </label> </div>
-  <div id="text" class="textAnimation" contentEditable="true">Variable</div>
-  <div class="container">
-    <div class="radio-tile-group">
-      <div class="input-container"> <input id="noto" class="radio-button" type="radio" name="radio" title='Noto Sans JP' onclick="changeStyle('noto')" checked>
-        <div class="radio-tile"> <label for="noto" class="radio-tile-label">Noto Sans JP</a></label> </div>
-      </div>
-      <div class="input-container"> <input id="mplus" class="radio-button" type="radio" name="radio" title='M PLUS 1' onclick="changeStyle('mplus')">
-        <div class="radio-tile"> <label for="mplus" class="radio-tile-label">M PLUS 1</label> </div>
-      </div>
-      <div class="input-container"> <input id="jost" class="radio-button" type="radio" name="radio" title='Jost' onclick="changeStyle('jost')">
-        <div class="radio-tile"> <label for="jost" class="radio-tile-label">Jost</label> </div>
-      </div>
-      <div class="input-container"> <input id="bodoni" class="radio-button" type="radio" name="radio" title='Bodoni Moda' onclick="changeStyle('bodoni')">
-        <div class="radio-tile"> <label for="bodoni" class="radio-tile-label">Bodoni Moda</label> </div>
-      </div>
+    <div class="spacer"></div>
+    <p class="announceText">Editable Variable Font Animation</p>
+    <div id="display-text" class="display-text" spellcheck="false" contenteditable="true"
+        onkeydown="preventEnter(event)">
+        Variable
     </div>
-  </div>
-  <a class="pagetop" href="#">
-    <div class="pagetop__arrow"></div>
-  </a>
-  <div class='box'>
-    <ul class="wrapper">
-      <li class="icon github" onclick="window.open(`https://github.com/zotjils/Variable-Font-Animation`)"> <img src="github-mark.svg" width="60%" height="60%" alt="GitHub"> </li>
-      <li class="icon note" onclick="window.open(`https://note.com/zotjils/`)"> <img src="note-mark.svg" width="90%" height="90%" alt="note"> </li>
-    </ul>
-    <p class="credit">These fonts are available at Google Fonts under the SIL Open Font License.</p>
-  </div>
-  <script>
-    function changeStyle(styleClass) {
-      var textElement = document.getElementById("text");
-      textElement.className = styleClass;
-    }
-  
-    const checkToggle = document.getElementById('js_mode_toggle');
-    const rotateIcon = document.getElementById('js_rotate');
-    const isLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    const keyLocalStorage = 'demoKey';
-    const localTheme = localStorage.getItem(keyLocalStorage);
-    let nowRotate = 0;
-  
-    if (localTheme === 'light') {
-      rotateInfinite();
-      changeMode('light');
-    } else if (localTheme === 'dark') {
-      changeMode('dark');
-    } else if (isLight) {
-      rotateInfinite();
-      changeMode('light');
-    }
-  
-    checkToggle.addEventListener('change', function (e) {
-      rotateInfinite();
-      if (e.target.checked) {
-        changeMode('light');
-        localStorage.setItem(keyLocalStorage, 'light');
-      } else {
-        changeMode('dark');
-        localStorage.setItem(keyLocalStorage, 'dark');
-      }
-    });
-  
-    function changeMode(mode) {
-      if (mode === 'light') {
-        document.documentElement.setAttribute('data-theme-mode', 'light');
-        checkToggle.checked = true;
-      } else if (mode === 'dark') {
-        document.documentElement.setAttribute('data-theme-mode', 'dark');
-        checkToggle.checked = false;
-      }
-    }
-  
-    function rotateInfinite() {
-      nowRotate += 180;
-      rotateIcon.style.transform = 'rotate(' + nowRotate + 'deg)';
-    }
-  </script>
+
+    <div class='switch'> <input id='js_mode_toggle' type='checkbox' /> <label class='switch-mode' for='js_mode_toggle'
+            id='js_rotate'>
+            <span id='switch-mode-dark' title='Dark Mode'>
+                <svg class='feather feather-moon' fill='none' height='24' stroke='currentColor' stroke-linecap='round'
+                    stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'
+                    xmlns='http://www.w3.org/2000/svg'>
+                    <path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z' />
+                </svg>
+            </span>
+            <span id='switch-mode-light' title='Light Mode'>
+                <svg class='feather feather-sun' fill='none' height='24' stroke='currentColor' stroke-linecap='round'
+                    stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'
+                    xmlns='http://www.w3.org/2000/svg'>
+                    <circle cx='12' cy='12' r='5' />
+                    <line x1='12' x2='12' y1='1' y2='3' />
+                    <line x1='12' x2='12' y1='21' y2='23' />
+                    <line x1='4.22' x2='5.64' y1='4.22' y2='5.64' />
+                    <line x1='18.36' x2='19.78' y1='18.36' y2='19.78' />
+                    <line x1='1' x2='3' y1='12' y2='12' />
+                    <line x1='21' x2='23' y1='12' y2='12' />
+                    <line x1='4.22' x2='5.64' y1='19.78' y2='18.36' />
+                    <line x1='18.36' x2='19.78' y1='5.64' y2='4.22' />
+                </svg>
+            </span>
+        </label> </div>
+
+    <div class="container">
+        <div class="radio-tile-group">
+            <div class="input-container"> <input id="noto" class="radio-button" type="radio" name="radio"
+                    title='Noto Sans JP' onclick="changeStyle('noto')" checked>
+                <div class="radio-tile"> <label for="noto" class="radio-tile-label">Noto Sans JP</a></label> </div>
+            </div>
+            <div class="input-container"> <input id="mplus" class="radio-button" type="radio" name="radio"
+                    title='M PLUS 1' onclick="changeStyle('mplus')">
+                <div class="radio-tile"> <label for="mplus" class="radio-tile-label">M PLUS 1</label> </div>
+            </div>
+            <div class="input-container"> <input id="jost" class="radio-button" type="radio" name="radio" title='Jost'
+                    onclick="changeStyle('jost')">
+                <div class="radio-tile"> <label for="jost" class="radio-tile-label">Jost</label> </div>
+            </div>
+            <div class="input-container"> <input id="bodoni" class="radio-button" type="radio" name="radio"
+                    title='Bodoni Moda' onclick="changeStyle('bodoni')">
+                <div class="radio-tile"> <label for="bodoni" class="radio-tile-label">Bodoni Moda</label> </div>
+            </div>
+        </div>
+    </div>
+    <a class="pagetop" href="#">
+        <div class="pagetop__arrow"></div>
+    </a>
+    <div class='box'>
+        <ul class="wrapper">
+            <li class="icon github" onclick="window.open(`https://github.com/zotjils/vf-animation`)"> <img
+                    src="github-mark.svg" width="60%" height="60%" alt="GitHub"> </li>
+            <li class="icon note" onclick="window.open(`https://note.com/zotjils/`)"> <img src="note-mark.svg"
+                    width="90%" height="90%" alt="note"> </li>
+        </ul>
+        <p class="credit">These fonts are available at Google Fonts under the SIL Open Font License.</p>
+    </div>
+    <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
